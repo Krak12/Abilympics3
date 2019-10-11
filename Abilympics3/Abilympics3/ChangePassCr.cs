@@ -16,5 +16,26 @@ namespace Abilympics3
         {
             InitializeComponent();
         }
+
+        /* значение поля textBox сохраняется в переменную ChangePassCr и
+         происходит переход на форму CreatorMenu*/
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Data.ChangePassCr = textBox3.Text;
+            Form crm = new CreatorMenu();
+            Hide();
+            DialogResult res = crm.ShowDialog();
+            if (res != DialogResult.Cancel)
+            {
+                Show();
+            }
+            else Close();
+        }
+
+        // закрытие формы
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
